@@ -1,2 +1,21 @@
-# Create a program that will accept the two legs of a right-angle triangle, a and b, and display the length of the hypotenuse, c. 
-# Remember to use prompts for the input and labels for the output. Use the formula a2 + b2 = c2 to calculate your answer.
+import math
+import decimal
+decimal.getcontext().rounding = decimal.ROUND_HALF_UP
+
+# ask for stuffs
+while True:
+    try:
+        a = float(input("Enter the length of the first leg: "))
+        b = float(input("Enter the length of the second leg: "))
+        break
+    except ValueError:
+        print("No, Please enter a valid number.")
+
+# mathing
+c = math.sqrt(a**2 + b**2)
+
+# roundin'
+c = round(decimal.Decimal(str(c)), 2)
+
+# hypotenoose
+print("The length of the hypotenuse is: ", c)
